@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@layer base {
+  body {
+    background-color: var(--bg, #fff9f1);
+    color: var(--text, #1c1a17);
+  }
+}

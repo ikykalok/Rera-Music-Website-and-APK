@@ -1,0 +1,653 @@
+[
+  {
+    "id": 1,
+    "title": "Aaina",
+    "filename": "Aaina(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Aaina(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_0.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Aaj Phir",
+    "filename": "Aaj Phir(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Aaj%20Phir(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_1.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Again",
+    "filename": "Again(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Again(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_2.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Aise Kaise",
+    "filename": "Aise Kaise(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Aise%20Kaise(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_3.jpg"
+  },
+  {
+    "id": 5,
+    "title": "AISE WAISE",
+    "filename": "AISE WAISE(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/AISE%20WAISE(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_4.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Alag Aasmaan",
+    "filename": "Alag Aasmaan(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Alag%20Aasmaan(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_5.jpg"
+  },
+  {
+    "id": 7,
+    "title": "ALVIDA",
+    "filename": "ALVIDA(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/ALVIDA(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_6.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Catfish",
+    "filename": "Catfish(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Catfish(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_7.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Chal Diye Tum Kahan",
+    "filename": "Chal Diye Tum Kahan(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Chal%20Diye%20Tum%20Kahan(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_8.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Cold out here",
+    "filename": "Cold out here(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Cold%20out%20here(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_9.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Departure Lane",
+    "filename": "Departure Lane(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Departure%20Lane(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_10.jpg"
+  },
+  {
+    "id": 12,
+    "title": "Describe Your Mind",
+    "filename": "Describe Your Mind(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Describe%20Your%20Mind(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_11.jpg"
+  },
+  {
+    "id": 13,
+    "title": "Dilkashi",
+    "filename": "Dilkashi(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Dilkashi(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_12.jpg"
+  },
+  {
+    "id": 14,
+    "title": "DLL",
+    "filename": "DLL(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/DLL(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_13.jpg"
+  },
+  {
+    "id": 15,
+    "title": "DOBARA",
+    "filename": "DOBARA(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/DOBARA(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_14.jpg"
+  },
+  {
+    "id": 16,
+    "title": "Dooriyan",
+    "filename": "Dooriyan(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Dooriyan(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_15.jpg"
+  },
+  {
+    "id": 17,
+    "title": "ek thikaana",
+    "filename": "ek thikaana(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/ek%20thikaana(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_16.jpg"
+  },
+  {
+    "id": 18,
+    "title": "Empty and Lost",
+    "filename": "Empty and Lost(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Empty%20and%20Lost(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_17.jpg"
+  },
+  {
+    "id": 19,
+    "title": "Fall Apart",
+    "filename": "Fall Apart(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Fall%20Apart(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_18.jpg"
+  },
+  {
+    "id": 20,
+    "title": "Forgive Me",
+    "filename": "Forgive Me(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Forgive%20Me(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_19.jpg"
+  },
+  {
+    "id": 21,
+    "title": "Ghum Nahi",
+    "filename": "Ghum Nahi(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Ghum%20Nahi(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_20.jpg"
+  },
+  {
+    "id": 22,
+    "title": "GOODBYE",
+    "filename": "GOODBYE - Official music Video _ lekhak _ Director Cresent _ Kabiir Arora(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/GOODBYE%20-%20Official%20music%20Video%20_%20lekhak%20_%20Director%20Cresent%20_%20Kabiir%20Arora(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_21.jpg"
+  },
+  {
+    "id": 23,
+    "title": "Gumshuda",
+    "filename": "Gumshuda(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Gumshuda(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_22.jpg"
+  },
+  {
+    "id": 24,
+    "title": "Humsafar",
+    "filename": "Humsafar(MP3_160K)_1.mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Humsafar(MP3_160K)_1.mp3",
+    "artwork": "/songs/artwork/art_23.jpg"
+  },
+  {
+    "id": 25,
+    "title": "Husn",
+    "filename": "Husn(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Husn(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_24.jpg"
+  },
+  {
+    "id": 26,
+    "title": "Incurable Sadness",
+    "filename": "Incurable Sadness(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Incurable%20Sadness(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_25.jpg"
+  },
+  {
+    "id": 27,
+    "title": "Ishq (From Lost Found )",
+    "filename": "Ishq (From _Lost_Found_)(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Ishq%20(From%20_Lost_Found_)(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_26.jpg"
+  },
+  {
+    "id": 28,
+    "title": "Jaaneman",
+    "filename": "Jaaneman(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Jaaneman(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_27.jpg"
+  },
+  {
+    "id": 29,
+    "title": "Jhoot",
+    "filename": "Jhoot(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Jhoot(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_28.jpg"
+  },
+  {
+    "id": 30,
+    "title": "Just Cry No Cues",
+    "filename": "Just Cry No Cues(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Just%20Cry%20No%20Cues(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_29.jpg"
+  },
+  {
+    "id": 31,
+    "title": "Kabhi Kabhi",
+    "filename": "Kabhi Kabhi(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Kabhi%20Kabhi(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_30.jpg"
+  },
+  {
+    "id": 32,
+    "title": "Kami",
+    "filename": "Kami(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Kami(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_31.jpg"
+  },
+  {
+    "id": 33,
+    "title": "Khaali Se Kamre",
+    "filename": "Khaali Se Kamre(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Khaali%20Se%20Kamre(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_32.jpg"
+  },
+  {
+    "id": 34,
+    "title": "Khat",
+    "filename": "Khat(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Khat(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_33.jpg"
+  },
+  {
+    "id": 35,
+    "title": "Khud Se Kehta Hu",
+    "filename": "Khud Se Kehta Hu(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Khud%20Se%20Kehta%20Hu(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_34.jpg"
+  },
+  {
+    "id": 36,
+    "title": "Khush Reh Tu",
+    "filename": "Khush Reh Tu(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Khush%20Reh%20Tu(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_35.jpg"
+  },
+  {
+    "id": 37,
+    "title": "Kiska Hua",
+    "filename": "Kiska Hua(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Kiska%20Hua(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_36.jpg"
+  },
+  {
+    "id": 38,
+    "title": "kya chahiye",
+    "filename": "kya chahiye(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/kya%20chahiye(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_37.jpg"
+  },
+  {
+    "id": 39,
+    "title": "Laapata",
+    "filename": "Laapata(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Laapata(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_38.jpg"
+  },
+  {
+    "id": 40,
+    "title": "LESS SCROLLING",
+    "filename": "LESS SCROLLING(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/LESS%20SCROLLING(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_39.jpg"
+  },
+  {
+    "id": 41,
+    "title": "Letter to You",
+    "filename": "Letter to You(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Letter%20to%20You(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_40.jpg"
+  },
+  {
+    "id": 42,
+    "title": "Long time no see",
+    "filename": "Long time no see(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Long%20time%20no%20see(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_41.jpg"
+  },
+  {
+    "id": 43,
+    "title": "Longing For Love",
+    "filename": "Longing For Love(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Longing%20For%20Love(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_42.jpg"
+  },
+  {
+    "id": 44,
+    "title": "love lost",
+    "filename": "love lost(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/love%20lost(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_43.jpg"
+  },
+  {
+    "id": 45,
+    "title": "Mai Bhool Gaya 2",
+    "filename": "Mai Bhool Gaya 2(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Mai%20Bhool%20Gaya%202(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_44.jpg"
+  },
+  {
+    "id": 46,
+    "title": "Main Bhool Gaya",
+    "filename": "Main Bhool Gaya(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Main%20Bhool%20Gaya(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_45.jpg"
+  },
+  {
+    "id": 47,
+    "title": "Malaal",
+    "filename": "Malaal(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Malaal(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_46.jpg"
+  },
+  {
+    "id": 48,
+    "title": "Mat Jao",
+    "filename": "Mat Jao(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Mat%20Jao(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_47.jpg"
+  },
+  {
+    "id": 49,
+    "title": "Mc Flu - Tere Deewane",
+    "filename": "Mc Flu - Tere Deewane (Produced by _Prodbyaarvi ) (official visualiser)(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Mc%20Flu%20-%20Tere%20Deewane%20(Produced%20by%20_Prodbyaarvi%20)%20(official%20visualiser)(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_48.jpg"
+  },
+  {
+    "id": 50,
+    "title": "Me You",
+    "filename": "Me _ You(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Me%20_%20You(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_49.jpg"
+  },
+  {
+    "id": 51,
+    "title": "Me",
+    "filename": "Me(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Me(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_50.jpg"
+  },
+  {
+    "id": 52,
+    "title": "Mere Ho Tum",
+    "filename": "Mere Ho Tum(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Mere%20Ho%20Tum(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_51.jpg"
+  },
+  {
+    "id": 53,
+    "title": "Meri Banogi Kya",
+    "filename": "Meri Banogi Kya(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Meri%20Banogi%20Kya(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_52.jpg"
+  },
+  {
+    "id": 54,
+    "title": "Na Pata Mujhe",
+    "filename": "Na Pata Mujhe(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Na%20Pata%20Mujhe(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_53.jpg"
+  },
+  {
+    "id": 55,
+    "title": "No way to nowhere",
+    "filename": "No way to nowhere(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/No%20way%20to%20nowhere(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_54.jpg"
+  },
+  {
+    "id": 56,
+    "title": "Nothing Like U",
+    "filename": "Nothing Like U(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Nothing%20Like%20U(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_55.jpg"
+  },
+  {
+    "id": 57,
+    "title": "Now Then",
+    "filename": "Now _ Then(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Now%20_%20Then(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_56.jpg"
+  },
+  {
+    "id": 58,
+    "title": "OBVIOUS",
+    "filename": "OBVIOUS(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/OBVIOUS(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_57.jpg"
+  },
+  {
+    "id": 59,
+    "title": "Par Ab Jo Aayegi Tu",
+    "filename": "Par Ab Jo Aayegi Tu(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Par%20Ab%20Jo%20Aayegi%20Tu(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_58.jpg"
+  },
+  {
+    "id": 60,
+    "title": "Phool",
+    "filename": "Phool(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Phool(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_59.jpg"
+  },
+  {
+    "id": 61,
+    "title": "Pills On My Mind",
+    "filename": "Pills On My Mind(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Pills%20On%20My%20Mind(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_60.jpg"
+  },
+  {
+    "id": 62,
+    "title": "Piya Rey",
+    "filename": "Piya Rey(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Piya%20Rey(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_61.jpg"
+  },
+  {
+    "id": 63,
+    "title": "Prem",
+    "filename": "Prem(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Prem(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_62.jpg"
+  },
+  {
+    "id": 64,
+    "title": "Purple",
+    "filename": "Purple(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Purple(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_63.jpg"
+  },
+  {
+    "id": 65,
+    "title": "Raah",
+    "filename": "Raah(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Raah(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_64.jpg"
+  },
+  {
+    "id": 66,
+    "title": "Rainy Days",
+    "filename": "Rainy Days(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Rainy%20Days(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_65.jpg"
+  },
+  {
+    "id": 67,
+    "title": "Rastay",
+    "filename": "Rastay(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Rastay(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_66.jpg"
+  },
+  {
+    "id": 68,
+    "title": "Roya Tha",
+    "filename": "Roya Tha_(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Roya%20Tha_(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_67.jpg"
+  },
+  {
+    "id": 69,
+    "title": "Sabar",
+    "filename": "Sabar(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Sabar(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_68.jpg"
+  },
+  {
+    "id": 70,
+    "title": "Safarnama",
+    "filename": "Safarnama(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Safarnama(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_69.jpg"
+  },
+  {
+    "id": 71,
+    "title": "Same",
+    "filename": "Same(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Same(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_70.jpg"
+  },
+  {
+    "id": 72,
+    "title": "Sang Chalogi Kya",
+    "filename": "Sang Chalogi Kya(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Sang%20Chalogi%20Kya(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_71.jpg"
+  },
+  {
+    "id": 73,
+    "title": "Self Talk freestyle",
+    "filename": "Self Talk freestyle(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Self%20Talk%20freestyle(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_72.jpg"
+  },
+  {
+    "id": 74,
+    "title": "Shaamein",
+    "filename": "Shaamein(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Shaamein(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_73.jpg"
+  },
+  {
+    "id": 75,
+    "title": "Shikayat",
+    "filename": "Shikayat(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Shikayat(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_74.jpg"
+  },
+  {
+    "id": 76,
+    "title": "Silence Of The Heart",
+    "filename": "Silence Of The Heart(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Silence%20Of%20The%20Heart(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_75.jpg"
+  },
+  {
+    "id": 77,
+    "title": "Since Tum",
+    "filename": "Since Tum(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Since%20Tum(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_76.jpg"
+  },
+  {
+    "id": 78,
+    "title": "smile",
+    "filename": "smile(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/smile(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_77.jpg"
+  },
+  {
+    "id": 79,
+    "title": "Still Ocean",
+    "filename": "Still Ocean(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Still%20Ocean(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_78.jpg"
+  },
+  {
+    "id": 80,
+    "title": "Tere Bina",
+    "filename": "Tere Bina(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Tere%20Bina(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_79.jpg"
+  },
+  {
+    "id": 81,
+    "title": "The Last Letter",
+    "filename": "The Last Letter(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/The%20Last%20Letter(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_80.jpg"
+  },
+  {
+    "id": 82,
+    "title": "The Me Who I Lost in You Pt.2",
+    "filename": "The Me Who I Lost in You _ Pt.2(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/The%20Me%20Who%20I%20Lost%20in%20You%20_%20Pt.2(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_81.jpg"
+  },
+  {
+    "id": 83,
+    "title": "The Me Who I Lost in You",
+    "filename": "The Me Who I Lost in You(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/The%20Me%20Who%20I%20Lost%20in%20You(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_82.jpg"
+  },
+  {
+    "id": 84,
+    "title": "this is how it feels",
+    "filename": "this is how it feels(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/this%20is%20how%20it%20feels(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_83.jpg"
+  },
+  {
+    "id": 85,
+    "title": "Tu hai kahan",
+    "filename": "Tu hai kahan(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Tu%20hai%20kahan(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_84.jpg"
+  },
+  {
+    "id": 86,
+    "title": "Tum Se",
+    "filename": "Tum Se(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Tum%20Se(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_85.jpg"
+  },
+  {
+    "id": 87,
+    "title": "Wo Pal Bhi Kya Pal The",
+    "filename": "Wo Pal Bhi Kya Pal The(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Wo%20Pal%20Bhi%20Kya%20Pal%20The(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_86.jpg"
+  },
+  {
+    "id": 88,
+    "title": "YAAD (dedicated)",
+    "filename": "YAAD (dedicated)(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/YAAD%20(dedicated)(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_87.jpg"
+  },
+  {
+    "id": 89,
+    "title": "Yaad aa gayi",
+    "filename": "Yaad aa gayi(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Yaad%20aa%20gayi(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_88.jpg"
+  },
+  {
+    "id": 90,
+    "title": "Yaad Ayengy",
+    "filename": "Yaad Ayengy(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Yaad%20Ayengy(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_89.jpg"
+  },
+  {
+    "id": 91,
+    "title": "Yaad",
+    "filename": "Yaad(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Yaad(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_90.jpg"
+  },
+  {
+    "id": 92,
+    "title": "You",
+    "filename": "You(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/You(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_91.jpg"
+  },
+  {
+    "id": 93,
+    "title": "Zamana",
+    "filename": "Zamana(MP3_160K).mp3",
+    "url": "https://aesoddkqyqrungsvwfse.supabase.co/storage/v1/object/public/songs/Zamana(MP3_160K).mp3",
+    "artwork": "/songs/artwork/art_92.jpg"
+  }
+]

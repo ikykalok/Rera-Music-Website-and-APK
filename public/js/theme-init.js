@@ -1,0 +1,1 @@
+if (localStorage.getItem('theme') === 'night') document.body.classList.add('night');

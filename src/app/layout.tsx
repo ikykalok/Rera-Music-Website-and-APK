@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     apple: "/assets/app-icon.png",
   },
   verification: {
-    google: "NKnLYfhuvOA6pfPLxAq_sH4ifWr2nKkmSvS1TJnp3oM",
+    google: "BQG2E0gZRTYryhlahERNnxLeAIhrwHBfakrwGf5gavo",
   },
 };
 

@@ -69,7 +69,7 @@ export function SupportSection({ className = "" }: { className?: string }) {
             </div>
 
             <p className="lg-about-intro">
-              &ldquo;I&apos;m Alok, a student and developer from Jaipur. I build websites and apps using AI, turning creative ideas into real digital experiences. Tera Music is one of my projects, and I&apos;m always learning, building, and creating something new.&rdquo;
+              &ldquo;I&apos;m Alok, a student and developer from Jaipur. I build websites and apps using AI, turning creative ideas into real digital experiences. Ryno Music is one of my projects, and I&apos;m always learning, building, and creating something new.&rdquo;
             </p>
 
             {/* Social Links Row */}

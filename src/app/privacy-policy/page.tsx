@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { LegalThemeWrapper } from "@/components/LegalThemeWrapper";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Tera Music",
+  title: "Privacy Policy — Ryno Music",
   description:
-    "Privacy Policy for Tera Music App. Explaining how we collect, use, and protect your information.",
+    "Privacy Policy for Ryno Music App. Explaining how we collect, use, and protect your information.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
     <LegalThemeWrapper>
       <div className="legal-container">
         <header className="legal-header">
-          <h1 className="legal-title">Privacy Policy for Tera Music App</h1>
+          <h1 className="legal-title">Privacy Policy for Ryno Music App</h1>
           <p className="legal-meta">Last updated: November 2026</p>
         </header>
 
@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
           <section className="legal-section">
             <h2>1. Introduction</h2>
             <p>
-              Tera Music (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to protecting your privacy.
+              Ryno Music (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application (the &ldquo;App&rdquo;).
             </p>
           </section>
@@ -190,7 +190,7 @@ export default function PrivacyPolicyPage() {
               <li>We are committed to protecting your privacy and being transparent about our practices.</li>
             </ul>
             <p className="legal-closing">
-              <strong>By using Tera Music, you agree to the collection and use of information in accordance with this Privacy Policy.</strong>
+              <strong>By using Ryno Music, you agree to the collection and use of information in accordance with this Privacy Policy.</strong>
             </p>
           </section>
         </div>

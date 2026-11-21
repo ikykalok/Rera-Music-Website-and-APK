@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Tera Music — Your World of Sound",
+  title: "Ryno Music — Your World of Sound",
   description:
     "An open-source third-party YouTube Music client with offline playback, synchronized lyrics, zero ads, and real-time audio experiences.",
   icons: {
@@ -35,6 +35,20 @@ export const metadata: Metadata = {
     ],
     shortcut: "/assets/app-icon.png",
     apple: "/assets/app-icon.png",
+  },
+  openGraph: {
+    title: "Ryno Music — Your World of Sound",
+    description:
+      "An open-source third-party YouTube Music client with offline playback, synchronized lyrics, zero ads, and real-time audio experiences.",
+    siteName: "Ryno Music",
+    images: [{ url: "/assets/app-icon.png", width: 512, height: 512, alt: "Ryno Music" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Ryno Music — Your World of Sound",
+    description:
+      "An open-source third-party YouTube Music client with offline playback, synchronized lyrics, zero ads, and real-time audio experiences.",
+    images: ["/assets/app-icon.png"],
   },
   verification: {
     google: "BQG2E0gZRTYryhlahERNnxLeAIhrwHBfakrwGf5gavo",

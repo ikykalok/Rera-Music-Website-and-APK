@@ -28,12 +28,12 @@ const NAV_HTML = `
 
     <div class="nav-pill" id="nav-pill">
       <div class="nav-id">
-        <a class="nav-avatar" href="#top" aria-label="Tera Music — home">
+        <a class="nav-avatar" href="#top" aria-label="Ryno Music — home">
           <img src="/assets/imgProfilePicture.jpg" alt="">
         </a>
       </div>
       <div class="avail-tag" aria-hidden="true">
-        <span class="avail-text">Tera Music App</span>
+        <span class="avail-text">Ryno Music App</span>
       </div>
       <span class="avail-dot" aria-hidden="true"></span>
       <div class="nav-links" id="nav-links-group">

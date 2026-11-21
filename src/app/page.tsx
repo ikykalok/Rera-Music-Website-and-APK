@@ -34,11 +34,11 @@ export default function Home() {
       >
         {/* 3. SEE IT IN ACTION — Real Android Screenshots Showcase */}
         <ScreenshotShowcase />
-        {/* 4. WHY TERA — Eight Refined Feature Cards */}
+        {/* 4. WHY RYNO — Eight Refined Feature Cards */}
         <FeaturesShowcase />
         {/* 5. QUESTIONS — Straight Answers FAQ Accordion */}
         <FaqShowcase />
-        {/* 6. COMBINED ABOUT & SUPPORT TERA MUSIC */}
+        {/* 6. COMBINED ABOUT & SUPPORT RYNO MUSIC */}
         <SupportSection />
       </div>
     </>

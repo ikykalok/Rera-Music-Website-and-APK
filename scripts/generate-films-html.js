@@ -14,7 +14,7 @@ function generateFilmsHtml(totalDiscs = 52) {
               <div class="w-dyn-list">
                 <div role="list" class="w-dyn-items">
                   <div role="listitem" class="w-dyn-item">
-                    <p data-film-field="directors" class="paragraph-xxs">Tera Music</p>
+                    <p data-film-field="directors" class="paragraph-xxs">Ryno Music</p>
                   </div>
                 </div>
               </div>
@@ -29,12 +29,12 @@ function generateFilmsHtml(totalDiscs = 52) {
                 </div>
               </div>
               <p data-film-field="disc-art-url" class="paragraph-xxs">/dvd/disc-${numStr}.png</p>
-              <p data-film-field="disc-art-alt" class="paragraph-xxs">Tera Music DVD ${numStr} disc artwork</p>
+              <p data-film-field="disc-art-alt" class="paragraph-xxs">Ryno Music DVD ${numStr} disc artwork</p>
               <a data-film-field="detail-url" href="#dvd" data-barba-prevent="all" style="pointer-events:none" class="w-inline-block"></a>
               <div class="w-dyn-list">
                 <div role="list" class="w-dyn-items">
                   <div data-review-source-item="" role="listitem" class="w-dyn-item">
-                    <p data-film-field="review-publication" class="paragraph-xxs">Tera Audio</p>
+                    <p data-film-field="review-publication" class="paragraph-xxs">Ryno Audio</p>
                     <p data-film-field="review-testimonial" class="paragraph-xxs">Spatial Audio &amp; Lossless Dynamics</p>
                     <p data-film-field="review-stars" class="paragraph-xxs">5</p>
                   </div><div data-review-source-item="" role="listitem" class="w-dyn-item">
@@ -52,7 +52,7 @@ function generateFilmsHtml(totalDiscs = 52) {
       <section id="section_hero" data-theme-change="nav:dark" data-disc-gallery="" data-disc-touch-action="pan-y" class="hero theme-base">
         <div class="container">
           <div class="experience_wrap">
-            <h1 class="sr-only">Discover the Tera Music ${totalDiscs} Disc Collection</h1>
+            <h1 class="sr-only">Discover the Ryno Music ${totalDiscs} Disc Collection</h1>
             <div class="experience_info">
               <p space-top="" space-bottom="" data-film-target="title" style="" data-balance-lines="" data-reserve-lines="" data-reveal="" class="custom-element heading-s">DVD 01</p>
               <div class="info-content">
@@ -61,7 +61,7 @@ function generateFilmsHtml(totalDiscs = 52) {
                   <div class="info-content_label-wrap">
                     <p space-top="" space-bottom="" data-film-target="" style="" data-balance-lines="" data-reserve-lines="" data-reveal="" class="custom-element subheading-xs">ARTIST / LABEL</p>
                   </div>
-                  <p space-top="" space-bottom="" data-film-target="primary-credit" style="" data-balance-lines="" data-reserve-lines="" data-reveal="" class="custom-element paragraph-m text-align-right">Tera Music</p>
+                  <p space-top="" space-bottom="" data-film-target="primary-credit" style="" data-balance-lines="" data-reserve-lines="" data-reveal="" class="custom-element paragraph-m text-align-right">Ryno Music</p>
                 </div>
                 <div class="info-content_panel">
                   <div class="divider-horizontal top"></div>
@@ -83,7 +83,7 @@ function generateFilmsHtml(totalDiscs = 52) {
               <div data-review-target-item="" class="testimonial">
                 <div data-film-target="review-stars" class="testimonial__stars">${starsSvg}</div>
                 <div class="testimonial__text">
-                  <p space-top="" space-bottom="" data-film-target="review-publication" style="" data-balance-lines="" data-reserve-lines="" data-reveal="" class="custom-element subheading-xs text-align-center">Tera Audio</p>
+                  <p space-top="" space-bottom="" data-film-target="review-publication" style="" data-balance-lines="" data-reserve-lines="" data-reveal="" class="custom-element subheading-xs text-align-center">Ryno Audio</p>
                   <p space-top="" space-bottom="" data-film-target="review-testimonial" style="" data-balance-lines="" data-reserve-lines="" data-reveal="" class="custom-element heading-xs text-align-center">Spatial Audio &amp; Lossless Dynamics</p>
                 </div>
               </div>

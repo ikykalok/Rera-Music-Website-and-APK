@@ -12,9 +12,9 @@ interface FaqItem {
 const FAQS: FaqItem[] = [
   {
     id: "free",
-    question: "Is Tera Music really 100% free with no ads?",
+    question: "Is Ryno Music really 100% free with no ads?",
     answer:
-      "Yes, completely. Tera Music has zero subscription tiers, zero audio or video advertisements, and zero paywalls. It is an independent open-source project built for pure, uninterrupted listening.",
+      "Yes, completely. Ryno Music has zero subscription tiers, zero audio or video advertisements, and zero paywalls. It is an independent open-source project built for pure, uninterrupted listening.",
   },
   {
     id: "offline",
@@ -30,15 +30,15 @@ const FAQS: FaqItem[] = [
   },
   {
     id: "safe",
-    question: "Is Tera Music safe to install on Android?",
+    question: "Is Ryno Music safe to install on Android?",
     answer:
-      "Tera Music is 100% safe, privacy-respecting, and open source. It contains no trackers or hidden malware, and every release can be scanned and verified via VirusTotal with a 100% clean detection score.",
+      "Ryno Music is 100% safe, privacy-respecting, and open source. It contains no trackers or hidden malware, and every release can be scanned and verified via VirusTotal with a 100% clean detection score.",
   },
   {
     id: "source",
     question: "Where does the music come from?",
     answer:
-      "Tera Music acts as a modern, lightweight third-party client for YouTube Music and public streaming APIs. Tera Music does not host or store proprietary audio on its own servers.",
+      "Ryno Music acts as a modern, lightweight third-party client for YouTube Music and public streaming APIs. Ryno Music does not host or store proprietary audio on its own servers.",
   },
 ];
 
@@ -62,7 +62,7 @@ export function FaqShowcase({ className = "" }: FaqShowcaseProps) {
         </span>
         <h2 className="lg-faq-title">Straight answers</h2>
         <p className="lg-faq-desc">
-          Everything you need to know about Tera Music, security, features, and how it works.
+          Everything you need to know about Ryno Music, security, features, and how it works.
         </p>
       </ScrollReveal>
 

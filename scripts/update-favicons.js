@@ -60,7 +60,7 @@ async function updateFavicons() {
     .toFile('src/app/apple-icon.png');
   console.log('Updated src/app/apple-icon.png');
 
-  console.log('All favicons updated to official Tera Music red disc app icon!');
+  console.log('All favicons updated to official Ryno Music red disc app icon!');
 }
 
 updateFavicons().catch(err => {

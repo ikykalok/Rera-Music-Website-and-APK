@@ -1,4 +1,4 @@
-# Tera Music — Premium Music App & 3D DVD Interactive Experience
+# Ryno Music — Premium Music App & 3D DVD Interactive Experience
 
 A seamless, high-performance merged web application bringing together two world-class interactive experiences:
 1. **Section 1 — Original Interactive Music App Landing Page** (from `zainabkabira`): Complete interactive tape recorder with spinning audio reels, real-time song streaming directly from Supabase Storage URLs (`tera_music_song_urls.json`), time scrub bar, sky shader, sun/moon celestial transition, and dual Dark / Light theme toggle.

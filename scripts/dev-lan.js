@@ -20,7 +20,7 @@ function getLanIPv4() {
 
 const lanIp = getLanIPv4();
 console.log("");
-console.log("  Tera Music Dev Server");
+console.log("  Ryno Music Dev Server");
 console.log(`  - Local:        http://localhost:${port}`);
 if (lanIp) {
   console.log(`  - Mobile (LAN): http://${lanIp}:${port}`);

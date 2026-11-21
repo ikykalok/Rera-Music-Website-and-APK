@@ -37,13 +37,13 @@ export function GlobalFooter() {
               <div className="lg-footer-icon-wrap">
                 <Image
                   src="/assets/app-icon.png"
-                  alt="Tera Music Icon"
+                  alt="Ryno Music Icon"
                   width={42}
                   height={42}
                   className="lg-footer-app-icon"
                 />
               </div>
-              <span className="lg-footer-brand-name">Tera Music</span>
+              <span className="lg-footer-brand-name">Ryno Music</span>
             </Link>
             <p className="lg-footer-brand-desc">
               A modern, ad-free third-party YouTube Music client. Experience
@@ -136,7 +136,7 @@ export function GlobalFooter() {
 
         {/* Footer Bottom Bar */}
         <div className="lg-footer-bottom">
-          <p className="lg-footer-copy">© 2026 Tera Music. All rights reserved.</p>
+          <p className="lg-footer-copy">© 2026 Ryno Music. All rights reserved.</p>
         </div>
       </div>
     </footer>

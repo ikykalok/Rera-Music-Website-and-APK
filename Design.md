@@ -1,4 +1,4 @@
-# Design System — Tera Music Website
+# Design System — Ryno Music Website
 
 ## 1. Visual Architecture
 The website combines two distinct visual zones:

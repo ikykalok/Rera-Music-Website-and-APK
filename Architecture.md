@@ -1,4 +1,4 @@
-# Architecture — Tera Music Website
+# Architecture — Ryno Music Website
 
 ## 1. Technical Stack
 - **Framework**: Next.js `16.3.5` (App Router, Turbopack)

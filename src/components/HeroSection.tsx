@@ -23,19 +23,19 @@ export function HeroSection() {
 
     <p class="hero-eyebrow">
       <img src="/assets/imgEllipse14.svg" alt="">
-      WELCOME TO TERA MUSIC – YOUR WORLD OF SOUND
+      WELCOME TO RYNO MUSIC – YOUR WORLD OF SOUND
     </p>
 
     <span class="hero-vertical" aria-hidden="true">MUSIC / DISCOVER / EXPERIENCE</span>
 
     <h1>
-      <span class="sr-only">Tera Music, Your World of Sound — Jaipur, India</span>
+      <span class="sr-only">Ryno Music, Your World of Sound — Jaipur, India</span>
       <span class="h-line multidisciplinary">Press<span class="h-space"> </span>Play</span>
       <span class="h-line designer" id="scramble">Music</span>
     </h1>
 
     <!-- ── cassette player matching reference design ── -->
-    <div class="recorder" role="region" aria-label="Tera Music Audio Player">
+    <div class="recorder" role="region" aria-label="Ryno Music Audio Player">
 
       <div class="disk" id="disk-l" aria-hidden="true">
         <div class="disk-face"></div>

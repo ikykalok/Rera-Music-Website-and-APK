@@ -178,12 +178,12 @@ export function ScreenshotShowcase({ className = "" }: ScreenshotShowcaseProps) 
     <section className={`lg-showcase-section ${className}`} id="features">
       <div id="showcase" className="lg-anchor-offset" aria-hidden="true" />
       <ScrollReveal className="lg-showcase-header">
-        {/* Official Tera Music App Icon — rotates smoothly while visible in viewport */}
+        {/* Official Ryno Music App Icon — rotates smoothly while visible in viewport */}
         <div ref={iconStageRef} className="lg-app-icon-stage">
           <div className={`lg-app-icon-ring${iconVisible ? " is-spinning" : ""}`}>
             <Image
               src="/assets/app-icon.png"
-              alt="Tera Music Official App Icon"
+              alt="Ryno Music Official App Icon"
               width={88}
               height={88}
               className="lg-app-icon-img"
@@ -197,7 +197,7 @@ export function ScreenshotShowcase({ className = "" }: ScreenshotShowcaseProps) 
         </span>
         <h2 className="lg-showcase-title">Built for the way you listen</h2>
         <p className="lg-showcase-desc">
-          Actual screenshots from Tera Music running on Android. Seamless offline caching,
+          Actual screenshots from Ryno Music running on Android. Seamless offline caching,
           real-time synced lyrics, and clean navigation without promotional interruptions.
         </p>
 
@@ -234,7 +234,7 @@ export function ScreenshotShowcase({ className = "" }: ScreenshotShowcaseProps) 
           className="lg-marquee-container"
           ref={containerRef}
           tabIndex={0}
-          aria-label="Tera Music Android App Screenshots"
+          aria-label="Ryno Music Android App Screenshots"
         >
           <div className="lg-marquee-track">
             {displayItems.map((item, idx) => {
@@ -251,7 +251,7 @@ export function ScreenshotShowcase({ className = "" }: ScreenshotShowcaseProps) 
                 <div className="lg-phone-screen">
                   <Image
                     src={item.src}
-                    alt={`Tera Music ${item.name} Android screen`}
+                    alt={`Ryno Music ${item.name} Android screen`}
                     width={270}
                     height={585}
                     className="lg-screenshot-img"

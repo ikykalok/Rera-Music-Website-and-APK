@@ -2,13 +2,13 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "VirusTotal Security Scan — Tera Music",
+  title: "VirusTotal Security Scan — Ryno Music",
   description:
-    "Security scan verification and cryptographic hash analysis for the official Tera Music Android APK.",
+    "Security scan verification and cryptographic hash analysis for the official Ryno Music Android APK.",
 };
 
 const APK_INFO = {
-  fileName: "Tera-Music.apk",
+  fileName: "Ryno-Music.apk",
   version: "1.0.0 Release",
   fileSize: "143.7 MB (150,707,816 bytes)",
   sha256: "4a0ef468c8953d72fe78bd7fae13e65593d92f2fdab7e4bb3879422706c8e93e",
@@ -143,7 +143,7 @@ export default function VirusTotalPage() {
               {APK_INFO.sha256}
             </code>
             <p style={{ fontSize: "0.85rem", color: "var(--lg-text-dim)", marginTop: 12, marginBottom: 0 }}>
-              Verify this checksum on Windows via <code>Get-FileHash Tera-Music.apk</code> or on macOS/Linux via <code>sha256sum Tera-Music.apk</code>.
+              Verify this checksum on Windows via <code>Get-FileHash Ryno-Music.apk</code> or on macOS/Linux via <code>sha256sum Ryno-Music.apk</code>.
             </p>
           </div>
 

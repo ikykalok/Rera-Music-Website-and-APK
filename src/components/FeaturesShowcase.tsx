@@ -229,11 +229,11 @@ export function FeaturesShowcase({ className = "" }: FeaturesShowcaseProps) {
       <ScrollReveal className="lg-features-header">
         <span className="lg-pill-badge">
           <span className="lg-pill-dot" />
-          WHY TERA
+          WHY RYNO
         </span>
         <h2 className="lg-features-title">Everything you need, nothing you don&apos;t</h2>
         <p className="lg-features-desc">
-          Eight reasons people choose Echo over every other music player.
+          Eight reasons people choose Ryno over every other music player.
         </p>
       </ScrollReveal>
 

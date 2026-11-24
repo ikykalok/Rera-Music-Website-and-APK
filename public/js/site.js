@@ -40,7 +40,7 @@ const NAV_HTML = `
         <a href="#top" class="nav-link">Home</a>
         <a href="#features" class="nav-link">Explore</a>
         <a href="#about" class="nav-link">About</a>
-        <a href="https://github.com/ikykalok/Tera-Music-apk/releases/download/tera-music/Tero-Music.apk" class="nav-cta" target="_blank" rel="noopener">
+        <a href="https://github.com/ikykalok/Rera-Music-Website-and-APK/releases/latest" class="nav-cta" target="_blank" rel="noopener" data-download-apk>
           <svg class="nav-cta-ico" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
@@ -77,7 +77,7 @@ const MENU_HTML = `
         <li><a href="#top" class="menu-link"><span class="num">01</span><span class="word">Home</span></a></li>
         <li><a href="#features" class="menu-link"><span class="num">02</span><span class="word">Explore</span></a></li>
         <li><a href="#about" class="menu-link"><span class="num">03</span><span class="word">About</span></a></li>
-        <li><a href="https://github.com/ikykalok/Tera-Music-apk/releases/download/tera-music/Tero-Music.apk" class="menu-link" target="_blank" rel="noopener"><span class="num">04</span><span class="word">Download App</span></a></li>
+        <li><a href="https://github.com/ikykalok/Rera-Music-Website-and-APK/releases/latest" class="menu-link" target="_blank" rel="noopener" data-download-apk><span class="num">04</span><span class="word">Download App</span></a></li>
       </ul>
     </nav>
     <p class="menu-footer">JAIPUR, IN</p>
@@ -1116,4 +1116,161 @@ customElements.define('site-footer', SiteFooter);
   window.addEventListener('pointerup', () => dot.classList.remove('down'));
   document.addEventListener('mouseleave', () => { shown = false; dot.classList.remove('on'); });
   document.addEventListener('mouseenter', () => { shown = true; dot.classList.add('on'); });
+})();
+
+/* ════════════════════════════════════════════════════════════════════════
+   RYNO MUSIC — AUTOMATIC LATEST APK RELEASE DETECTION & BUTTON UPDATER
+   Checks GitHub Releases API on page load, finds the latest stable APK asset,
+   and dynamically updates all "Download App" buttons across the website.
+   ════════════════════════════════════════════════════════════════════════ */
+(function initRynoReleaseUpdater() {
+  const GITHUB_REPO = 'ikykalok/Rera-Music-Website-and-APK';
+  const API_ENDPOINT = '/api/latest-release';
+  const GITHUB_FALLBACK_API = 'https://api.github.com/repos/' + GITHUB_REPO + '/releases/latest';
+  const DEFAULT_FALLBACK_URL = 'https://github.com/' + GITHUB_REPO + '/releases/latest';
+  const STORAGE_KEY = 'ryno_latest_release_info';
+  const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes cache
+
+  function updateAllDownloadButtons(downloadUrl, releaseInfo) {
+    if (!downloadUrl) return;
+
+    const selectors = [
+      'a.nav-cta',
+      'a.menu-link[data-download-apk]',
+      'a.menu-link[href*="releases"]',
+      'a[data-download-apk]',
+      'a[href*="Rera-Music-Website-and-APK/releases"]',
+      'a[href*="Tera-Music-apk"]'
+    ];
+
+    try {
+      const elements = document.querySelectorAll(selectors.join(','));
+      elements.forEach(function (el) {
+        el.setAttribute('href', downloadUrl);
+        if (releaseInfo && releaseInfo.tag) {
+          el.setAttribute('data-release-tag', releaseInfo.tag);
+        }
+        if (releaseInfo && releaseInfo.apk && releaseInfo.apk.name) {
+          el.setAttribute('data-apk-name', releaseInfo.apk.name);
+        }
+      });
+
+      // Dispatch custom event for reactive client components
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('ryno:release-updated', {
+          detail: { downloadUrl: downloadUrl, release: releaseInfo }
+        }));
+      }
+    } catch (_) {}
+  }
+
+  function getCachedRelease() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (Date.now() - parsed.timestamp < CACHE_TTL_MS && parsed.downloadUrl) {
+        return parsed;
+      }
+    } catch (_) {}
+    return null;
+  }
+
+  function saveCachedRelease(data) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(Object.assign({}, data, {
+        timestamp: Date.now()
+      })));
+    } catch (_) {}
+  }
+
+  function extractApkFromGithubRelease(release) {
+    if (!release || release.draft || release.prerelease) return null;
+    const assets = Array.isArray(release.assets) ? release.assets : [];
+
+    let apkAsset = assets.find(function (a) {
+      return a.name && a.name.toLowerCase().endsWith('.apk');
+    });
+    if (!apkAsset && assets.length > 0) {
+      apkAsset = assets[0];
+    }
+
+    const downloadUrl = apkAsset ? apkAsset.browser_download_url : (release.html_url || DEFAULT_FALLBACK_URL);
+    return {
+      tag: release.tag_name,
+      name: release.name,
+      body: release.body,
+      publishedAt: release.published_at,
+      htmlUrl: release.html_url,
+      apk: apkAsset ? {
+        name: apkAsset.name,
+        size: apkAsset.size,
+        downloadUrl: apkAsset.browser_download_url
+      } : null,
+      downloadUrl: downloadUrl
+    };
+  }
+
+  async function fetchLatestRelease() {
+    // 1. Try our internal server API first (fast, edge-cached, prevents client rate limits)
+    try {
+      const res = await fetch(API_ENDPOINT, { cache: 'no-cache' });
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.downloadUrl) {
+          saveCachedRelease(data);
+          updateAllDownloadButtons(data.downloadUrl, data);
+          return;
+        }
+      }
+    } catch (_) {}
+
+    // 2. Direct fallback to GitHub public API
+    try {
+      const res = await fetch(GITHUB_FALLBACK_API, {
+        headers: { Accept: 'application/vnd.github.v3+json' }
+      });
+      if (res.ok) {
+        const release = await res.json();
+        const parsed = extractApkFromGithubRelease(release);
+        if (parsed && parsed.downloadUrl) {
+          saveCachedRelease(parsed);
+          updateAllDownloadButtons(parsed.downloadUrl, parsed);
+          return;
+        }
+      }
+    } catch (_) {}
+
+    // 3. Fallback to cached or default
+    const cached = getCachedRelease();
+    if (cached) {
+      updateAllDownloadButtons(cached.downloadUrl, cached);
+    }
+  }
+
+  // Run on startup
+  const cached = getCachedRelease();
+  if (cached && cached.downloadUrl) {
+    updateAllDownloadButtons(cached.downloadUrl, cached);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fetchLatestRelease);
+  } else {
+    fetchLatestRelease();
+  }
+
+  // Watch for any dynamic DOM additions (e.g., custom element mounts or client navigation)
+  if (typeof MutationObserver !== 'undefined') {
+    const observer = new MutationObserver(function () {
+      const current = getCachedRelease();
+      if (current && current.downloadUrl) {
+        updateAllDownloadButtons(current.downloadUrl, current);
+      }
+    });
+    observer.observe(document.body || document.documentElement, {
+      childList: true,
+      subtree: true
+    });
+  }
 })();

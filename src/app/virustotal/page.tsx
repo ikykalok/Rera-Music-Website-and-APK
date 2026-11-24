@@ -149,7 +149,7 @@ export default function VirusTotalPage() {
 
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginTop: 32 }}>
             <a
-              href="https://github.com/ikykalok/Tera-Music-apk/releases/download/tera-music/Tero-Music.apk"
+              href="https://github.com/ikykalok/Rera-Music-Website-and-APK/releases/latest"
               target="_blank"
               rel="noopener noreferrer"
               className="lg-action-btn lg-btn-primary"

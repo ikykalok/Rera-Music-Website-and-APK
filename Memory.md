@@ -1,7 +1,7 @@
 # Project Memory
 
 ## Completed Work
-- **APK Cleanup & External Link**: Deleted `public/Tera-Music.apk`; all `Download App` links use `https://github.com/ikykalok/Tera-Music-apk/releases/download/tera-music/Tero-Music.apk`.
+- **APK Cleanup & External Link**: Deleted `public/Tera-Music.apk`; all `Download App` links use `https://github.com/ikykalok/Rera-Music-Website-and-APK/releases/latest`.
 - **Runtime & Console Fixes**:
   - `src/app/layout.tsx`: Added `data-scroll-behavior="smooth"` to `<html>`.
   - `src/components/RuntimeLoader.tsx`: Gated Astro/Barba runtime script injection to `pathname === "/"` when `[data-barba="container"]` exists.

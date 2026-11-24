@@ -22,7 +22,7 @@ The **Ryno Music Website** is the official showcase and APK distribution portal 
    - Removed legacy "11. Contact Us" (`Privacy Policy`) and "11. Copyright Concerns & Contact" (`Terms`) sections and renumbered sequentially (`1`–`12` and `1`–`11`).
    - Scoped Dark/Light Mode toggle (`LegalThemeWrapper` + `site.js`) active **only** on `/privacy-policy` and `/terms`.
 8. **Footer (`GlobalFooter`) & External APK Distribution**:
-   - Cleaned footer removing redundant left-side Home/Features/About navigation columns while keeping Ryno Music branding, description, social links, legal links, and external GitHub APK download (`https://github.com/ikykalok/Tera-Music-apk/releases/download/tera-music/Tero-Music.apk`).
+   - Cleaned footer removing redundant left-side Home/Features/About navigation columns while keeping Ryno Music branding, description, social links, legal links, and external GitHub APK download (`https://github.com/ikykalok/Rera-Music-Website-and-APK/releases/latest`).
    - No local `.apk` binary stored in the project.
 
 ## 3. Responsive & Performance Requirements

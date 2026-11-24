@@ -25,6 +25,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tera-music-website.vercel.app"),
   title: "Ryno Music — Your World of Sound",
   description:
     "An open-source third-party YouTube Music client with offline playback, synchronized lyrics, zero ads, and real-time audio experiences.",

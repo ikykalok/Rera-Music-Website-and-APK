@@ -12,7 +12,7 @@
    - Only `#play-btn` toggles playback; `#disk-l`, `#disk-r`, and `.recorder` background must not trigger Play/Pause.
    - Preserve identical player colors in Day and Dark Mode.
 4. **Asset & Link Integrity**:
-   - Never store `.apk` binaries locally; all `Download App` links must target `https://github.com/ikykalok/Tera-Music-apk/releases/download/tera-music/Tero-Music.apk`.
+   - Never store `.apk` binaries locally; all `Download App` links must target `https://github.com/ikykalok/Rera-Music-Website-and-APK/releases/latest`.
    - Never replace real Android screenshots (`public/screenshots/app/`) or the official app icon (`/assets/app-icon.png`).
    - Keep `DVD/` (55 images), `public/dvd/disc-01.png`–`disc-55.png`, and `src/data/films_main.html` synchronized.
 5. **Runtime Error Prevention & Performance**:

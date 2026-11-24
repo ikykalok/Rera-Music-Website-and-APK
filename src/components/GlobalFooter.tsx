@@ -106,7 +106,7 @@ export function GlobalFooter() {
             <ul className="lg-footer-link-list">
               <li>
                 <a
-                  href="https://github.com/ikykalok/Tera-Music-apk/releases/download/tera-music/Tero-Music.apk"
+                  href="https://github.com/ikykalok/Rera-Music-Website-and-APK/releases/latest"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="lg-footer-link lg-highlight-link"

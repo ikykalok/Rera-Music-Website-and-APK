@@ -1,0 +1,204 @@
+name: Publish Ryno Music APK Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release Version (e.g., 1.4.8)"
+        required: true
+        type: string
+      apk_path:
+        description: "Path to newly built APK file (e.g., app-release.apk or build/outputs/apk/release/app-release.apk)"
+        required: false
+        default: "app-release.apk"
+        type: string
+      custom_notes:
+        description: "Optional custom changelog / What's New bullet points"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  publish-release:
+    name: Build, Verify & Publish Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Format & Normalize Version
+        id: versioning
+        run: |
+          RAW="${{ github.event.inputs.version }}"
+          # Strip leading 'v' or 'v.' and whitespace
+          CLEAN=$(echo "$RAW" | sed -E 's/^[vV]\.?//; s/^[[:space:]]+|[[:space:]]+$//g')
+          
+          if [ -z "$CLEAN" ]; then
+            echo "::error::Invalid version number provided: '$RAW'"
+            exit 1
+          fi
+
+          # Exact formatting required by specification:
+          # Git Tag: v.1.4.8 (with dot after v)
+          TAG_NAME="v.${CLEAN}"
+          # Release Title: Ryno Music v.1.4.8 (with dot after v)
+          RELEASE_TITLE="Ryno Music v.${CLEAN}"
+          # APK Asset Filename: Ryno Music v1.4.8.apk (without dot after v)
+          APK_FILENAME="Ryno Music v${CLEAN}.apk"
+
+          echo "clean_version=${CLEAN}" >> $GITHUB_OUTPUT
+          echo "tag_name=${TAG_NAME}" >> $GITHUB_OUTPUT
+          echo "release_title=${RELEASE_TITLE}" >> $GITHUB_OUTPUT
+          echo "apk_filename=${APK_FILENAME}" >> $GITHUB_OUTPUT
+
+          echo "Normalized version details:"
+          echo "  • Version:        $CLEAN"
+          echo "  • Git Tag:        $TAG_NAME"
+          echo "  • Release Title:  $RELEASE_TITLE"
+          echo "  • APK Filename:   $APK_FILENAME"
+
+      - name: Check for Android Source Code & Build Environment
+        id: check_source
+        run: |
+          if [ -f "./gradlew" ] || [ -f "./android/gradlew" ]; then
+            echo "has_android_source=true" >> $GITHUB_OUTPUT
+            echo "Android source tree detected."
+          else
+            echo "has_android_source=false" >> $GITHUB_OUTPUT
+            echo "No Android build files (gradlew) detected in this repository."
+          fi
+
+      - name: Set up JDK 17 (if Android source exists)
+        if: steps.check_source.outputs.has_android_source == 'true'
+        uses: actions/setup-java@v4
+        with:
+          distribution: "zulu"
+          java-version: "17"
+
+      - name: Build Android APK (if Android source exists)
+        if: steps.check_source.outputs.has_android_source == 'true'
+        run: |
+          chmod +x ./gradlew || chmod +x ./android/gradlew
+          if [ -f "./gradlew" ]; then
+            ./gradlew assembleRelease
+            BUILT=$(find app/build/outputs/apk/release/ -name "*.apk" | head -n 1)
+          else
+            cd android && ./gradlew assembleRelease && cd ..
+            BUILT=$(find android/app/build/outputs/apk/release/ -name "*.apk" | head -n 1)
+          fi
+          echo "BUILT_APK=$BUILT" >> $GITHUB_ENV
+
+      - name: Locate & Verify APK
+        id: verify_apk
+        run: |
+          CANDIDATE=""
+          INPUT_PATH="${{ github.event.inputs.apk_path }}"
+
+          if [ -n "$BUILT_APK" ] && [ -f "$BUILT_APK" ]; then
+            CANDIDATE="$BUILT_APK"
+          elif [ -n "$INPUT_PATH" ] && [ -f "$INPUT_PATH" ]; then
+            CANDIDATE="$INPUT_PATH"
+          else
+            # Search for any recently placed APK in workspace root
+            FOUND=$(find . -maxdepth 2 -name "*.apk" -not -path "*/node_modules/*" -not -path "*/.next/*" | head -n 1)
+            if [ -n "$FOUND" ] && [ -f "$FOUND" ]; then
+              CANDIDATE="$FOUND"
+            fi
+          fi
+
+          if [ -z "$CANDIDATE" ] || [ ! -f "$CANDIDATE" ]; then
+            echo "::error::No valid APK file found."
+            echo "Since the Android source code is hosted separately from the website repository,"
+            echo "please place the newly compiled APK into the repository (e.g. app-release.apk) or specify its path."
+            exit 1
+          fi
+
+          # Verify file size (must be non-empty valid artifact, > 1MB)
+          FILE_SIZE=$(stat -c%s "$CANDIDATE" 2>/dev/null || stat -f%z "$CANDIDATE" 2>/dev/null)
+          if [ "$FILE_SIZE" -lt 1000000 ]; then
+            echo "::error::APK file size is too small ($FILE_SIZE bytes). Valid release APK must exceed 1MB."
+            exit 1
+          fi
+
+          DEST_NAME="${{ steps.versioning.outputs.apk_filename }}"
+          cp "$CANDIDATE" "$DEST_NAME"
+
+          SHA256=$(sha256sum "$DEST_NAME" | cut -d ' ' -f 1)
+          SIZE_MB=$(awk "BEGIN {printf \"%.2f\", $FILE_SIZE/1048576}")
+
+          echo "apk_file=${DEST_NAME}" >> $GITHUB_OUTPUT
+          echo "sha256=${SHA256}" >> $GITHUB_OUTPUT
+          echo "size_mb=${SIZE_MB} MB" >> $GITHUB_OUTPUT
+          echo "file_size_bytes=${FILE_SIZE}" >> $GITHUB_OUTPUT
+
+          echo "APK successfully verified:"
+          echo "  • Name: $DEST_NAME"
+          echo "  • Size: ${SIZE_MB} MB ($FILE_SIZE bytes)"
+          echo "  • SHA-256: $SHA256"
+
+      - name: Generate Release Notes
+        id: notes
+        run: |
+          CUSTOM="${{ github.event.inputs.custom_notes }}"
+          if [ -z "$CUSTOM" ]; then
+            CHANGES="- Performance improvements.\n- Bug fixes and stability enhancements.\n- Improvements to the overall listening experience."
+          else
+            CHANGES="$CUSTOM"
+          fi
+
+          cat << 'EOF' > release_body.md
+          # Ryno Music — Your Music, Your Experience.
+
+          Experience your music with Ryno Music, designed to make listening simple, smooth, and enjoyable.
+
+          ### What's New
+          EOF
+
+          echo -e "$CHANGES" >> release_body.md
+
+          cat << EOF >> release_body.md
+
+          ### Download
+          Download the latest Ryno Music Android APK from this release.
+
+          - **File:** \`${{ steps.versioning.outputs.apk_filename }}\`
+          - **File Size:** ${{ steps.verify_apk.outputs.size_mb }}
+          - **SHA-256:** \`${{ steps.verify_apk.outputs.sha256 }}\`
+          - **Compatibility:** Android 6.0+ (API 23+)
+          EOF
+
+      - name: Publish GitHub Release & Upload APK
+        env:
+          GH_TOKEN: ${{ secrets.GH_RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ steps.versioning.outputs.tag_name }}"
+          TITLE="${{ steps.versioning.outputs.release_title }}"
+          APK_FILE="${{ steps.verify_apk.outputs.apk_file }}"
+
+          echo "Publishing release $TITLE with tag $TAG..."
+
+          # Check if tag or release already exists
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release $TAG already exists. Uploading/overwriting asset..."
+            gh release upload "$TAG" "$APK_FILE" --clobber
+            gh release edit "$TAG" --title "$TITLE" --notes-file release_body.md
+          else
+            gh release create "$TAG" "$APK_FILE" \
+              --title "$TITLE" \
+              --notes-file release_body.md \
+              --target "${{ github.ref_name }}"
+          fi
+
+      - name: Verify Published Release & Asset
+        env:
+          GH_TOKEN: ${{ secrets.GH_RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ steps.versioning.outputs.tag_name }}"
+          echo "Verifying release on GitHub..."
+          gh release view "$TAG" --json tagName,name,assets,url
+          echo "Verification complete: Release and APK are live on GitHub!"

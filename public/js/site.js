@@ -1126,10 +1126,11 @@ customElements.define('site-footer', SiteFooter);
 (function initRynoReleaseUpdater() {
   const GITHUB_REPO = 'ikykalok/Rera-Music-Website-and-APK';
   const API_ENDPOINT = '/api/latest-release';
-  const GITHUB_FALLBACK_API = 'https://api.github.com/repos/' + GITHUB_REPO + '/releases/latest';
+  const GITHUB_FALLBACK_API = 'https://api.github.com/repos/' + GITHUB_REPO + '/releases?per_page=10';
   const DEFAULT_FALLBACK_URL = 'https://github.com/' + GITHUB_REPO + '/releases/latest';
   const STORAGE_KEY = 'ryno_latest_release_info';
-  const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes cache
+  let isFetching = false;
+  let lastFetchTime = 0;
 
   function updateAllDownloadButtons(downloadUrl, releaseInfo) {
     if (!downloadUrl) return;
@@ -1140,7 +1141,8 @@ customElements.define('site-footer', SiteFooter);
       'a.menu-link[href*="releases"]',
       'a[data-download-apk]',
       'a[href*="Rera-Music-Website-and-APK/releases"]',
-      'a[href*="Tera-Music-apk"]'
+      'a[href*="Tera-Music-apk"]',
+      'a[href*="github.com"][href*="/releases"]'
     ];
 
     try {
@@ -1149,6 +1151,7 @@ customElements.define('site-footer', SiteFooter);
         el.setAttribute('href', downloadUrl);
         if (releaseInfo && releaseInfo.tag) {
           el.setAttribute('data-release-tag', releaseInfo.tag);
+          el.setAttribute('title', 'Download Ryno Music ' + releaseInfo.tag);
         }
         if (releaseInfo && releaseInfo.apk && releaseInfo.apk.name) {
           el.setAttribute('data-apk-name', releaseInfo.apk.name);
@@ -1169,7 +1172,7 @@ customElements.define('site-footer', SiteFooter);
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return null;
       const parsed = JSON.parse(raw);
-      if (Date.now() - parsed.timestamp < CACHE_TTL_MS && parsed.downloadUrl) {
+      if (parsed && parsed.downloadUrl) {
         return parsed;
       }
     } catch (_) {}
@@ -1184,24 +1187,66 @@ customElements.define('site-footer', SiteFooter);
     } catch (_) {}
   }
 
-  function extractApkFromGithubRelease(release) {
-    if (!release || release.draft || release.prerelease) return null;
-    const assets = Array.isArray(release.assets) ? release.assets : [];
-
-    let apkAsset = assets.find(function (a) {
-      return a.name && a.name.toLowerCase().endsWith('.apk');
+  function findBestApk(assets, tagName) {
+    if (!Array.isArray(assets) || assets.length === 0) return null;
+    const cleanVersion = (tagName || '').replace(/^[vV]\.?/, '').trim();
+    const apkAssets = assets.filter(function (a) {
+      return a && typeof a.name === 'string' && a.name.toLowerCase().endsWith('.apk') && a.browser_download_url;
     });
-    if (!apkAsset && assets.length > 0) {
-      apkAsset = assets[0];
+    if (apkAssets.length === 0) return null;
+
+    const escVer = cleanVersion.replace(/\./g, '\\.');
+    const exact1 = new RegExp('^ryno\\s*music\\s*v\\.?' + escVer + '\\.apk$', 'i');
+    const exact2 = new RegExp('^ryno[._]music[._]v\\.?' + escVer + '\\.apk$', 'i');
+
+    for (let i = 0; i < apkAssets.length; i++) {
+      if (exact1.test(apkAssets[i].name) || exact2.test(apkAssets[i].name)) return apkAssets[i];
+    }
+    for (let i = 0; i < apkAssets.length; i++) {
+      const lower = apkAssets[i].name.toLowerCase();
+      if (lower.includes('ryno') && apkAssets[i].name.includes(cleanVersion)) return apkAssets[i];
+    }
+    for (let i = 0; i < apkAssets.length; i++) {
+      if (apkAssets[i].name.includes(cleanVersion)) return apkAssets[i];
+    }
+    for (let i = 0; i < apkAssets.length; i++) {
+      if (apkAssets[i].name.toLowerCase().includes('ryno')) return apkAssets[i];
+    }
+    return apkAssets[0];
+  }
+
+  function parseGithubReleases(data) {
+    if (!Array.isArray(data) || data.length === 0) return null;
+    const stable = data.filter(function (r) {
+      return r && !r.draft && !r.prerelease;
+    });
+    if (stable.length === 0) return null;
+
+    stable.sort(function (a, b) {
+      return new Date(b.published_at).getTime() - new Date(a.published_at).getTime();
+    });
+
+    let target = stable[0];
+    let apkAsset = findBestApk(target.assets, target.tag_name);
+
+    if (!apkAsset) {
+      for (let i = 1; i < stable.length; i++) {
+        const candidate = findBestApk(stable[i].assets, stable[i].tag_name);
+        if (candidate) {
+          target = stable[i];
+          apkAsset = candidate;
+          break;
+        }
+      }
     }
 
-    const downloadUrl = apkAsset ? apkAsset.browser_download_url : (release.html_url || DEFAULT_FALLBACK_URL);
+    const downloadUrl = apkAsset ? apkAsset.browser_download_url : (target.html_url || DEFAULT_FALLBACK_URL);
     return {
-      tag: release.tag_name,
-      name: release.name,
-      body: release.body,
-      publishedAt: release.published_at,
-      htmlUrl: release.html_url,
+      tag: target.tag_name,
+      name: target.name || ('Ryno Music ' + target.tag_name),
+      body: target.body,
+      publishedAt: target.published_at,
+      htmlUrl: target.html_url,
       apk: apkAsset ? {
         name: apkAsset.name,
         size: apkAsset.size,
@@ -1212,52 +1257,73 @@ customElements.define('site-footer', SiteFooter);
   }
 
   async function fetchLatestRelease() {
-    // 1. Try our internal server API first (fast, edge-cached, prevents client rate limits)
-    try {
-      const res = await fetch(API_ENDPOINT, { cache: 'no-cache' });
-      if (res.ok) {
-        const data = await res.json();
-        if (data && data.downloadUrl) {
-          saveCachedRelease(data);
-          updateAllDownloadButtons(data.downloadUrl, data);
-          return;
-        }
-      }
-    } catch (_) {}
+    const now = Date.now();
+    if (isFetching || (now - lastFetchTime < 15000)) return; // Avoid spamming within 15s
+    isFetching = true;
+    lastFetchTime = now;
 
-    // 2. Direct fallback to GitHub public API
     try {
-      const res = await fetch(GITHUB_FALLBACK_API, {
-        headers: { Accept: 'application/vnd.github.v3+json' }
-      });
-      if (res.ok) {
-        const release = await res.json();
-        const parsed = extractApkFromGithubRelease(release);
-        if (parsed && parsed.downloadUrl) {
-          saveCachedRelease(parsed);
-          updateAllDownloadButtons(parsed.downloadUrl, parsed);
-          return;
+      // 1. Try our internal server API first (fast, ISR-cached, rate-limit protected)
+      try {
+        const res = await fetch(API_ENDPOINT, { cache: 'no-cache' });
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.downloadUrl) {
+            saveCachedRelease(data);
+            updateAllDownloadButtons(data.downloadUrl, data);
+            isFetching = false;
+            return;
+          }
         }
-      }
-    } catch (_) {}
+      } catch (_) {}
 
-    // 3. Fallback to cached or default
-    const cached = getCachedRelease();
-    if (cached) {
-      updateAllDownloadButtons(cached.downloadUrl, cached);
+      // 2. Direct fallback to GitHub public API (/releases?per_page=10)
+      try {
+        const res = await fetch(GITHUB_FALLBACK_API, {
+          headers: { Accept: 'application/vnd.github.v3+json' }
+        });
+        if (res.ok) {
+          const list = await res.json();
+          const parsed = parseGithubReleases(list);
+          if (parsed && parsed.downloadUrl) {
+            saveCachedRelease(parsed);
+            updateAllDownloadButtons(parsed.downloadUrl, parsed);
+            isFetching = false;
+            return;
+          }
+        }
+      } catch (_) {}
+
+      // 3. Fallback to cached if any
+      const cached = getCachedRelease();
+      if (cached && cached.downloadUrl) {
+        updateAllDownloadButtons(cached.downloadUrl, cached);
+      }
+    } finally {
+      isFetching = false;
     }
   }
 
-  // Run on startup
-  const cached = getCachedRelease();
-  if (cached && cached.downloadUrl) {
-    updateAllDownloadButtons(cached.downloadUrl, cached);
+  // Immediately apply cached release URL on initial load for instant button response
+  const initialCached = getCachedRelease();
+  if (initialCached && initialCached.downloadUrl) {
+    updateAllDownloadButtons(initialCached.downloadUrl, initialCached);
   }
 
+  // Trigger background release check on visit
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', fetchLatestRelease);
   } else {
     fetchLatestRelease();
+  }
+
+  // Refetch when tab becomes visible again (e.g. after publishing a release)
+  if (typeof document !== 'undefined' && typeof document.addEventListener === 'function') {
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'visible') {
+        fetchLatestRelease();
+      }
+    });
   }
 
   // Watch for any dynamic DOM additions (e.g., custom element mounts or client navigation)

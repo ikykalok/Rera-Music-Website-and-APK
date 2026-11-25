@@ -44,12 +44,12 @@ jobs:
           fi
 
           # Exact formatting required by specification:
-          # Git Tag: v.1.4.8 (with dot after v)
+          # Git Tag: v.1.1.1 (with dot after v)
           TAG_NAME="v.${CLEAN}"
-          # Release Title: Ryno Music v.1.4.8 (with dot after v)
+          # Release Title: Ryno Music v.1.1.1 (with dot after v)
           RELEASE_TITLE="Ryno Music v.${CLEAN}"
-          # APK Asset Filename: Ryno Music v1.4.8.apk (without dot after v)
-          APK_FILENAME="Ryno Music v${CLEAN}.apk"
+          # APK Asset Filename: Ryno Music v.1.1.1.apk (with dot after v)
+          APK_FILENAME="Ryno Music v.${CLEAN}.apk"
 
           echo "clean_version=${CLEAN}" >> $GITHUB_OUTPUT
           echo "tag_name=${TAG_NAME}" >> $GITHUB_OUTPUT

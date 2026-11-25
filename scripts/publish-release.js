@@ -32,6 +32,7 @@ function parseArgs() {
     apk: null,
     version: null,
     notes: null,
+    filename: null,
     token: process.env.GH_RELEASE_TOKEN || process.env.GITHUB_TOKEN || null,
     repo: REPO_DEFAULT,
   };
@@ -40,6 +41,7 @@ function parseArgs() {
     const arg = args[i];
     if (arg === '--apk' && args[i + 1]) options.apk = args[++i];
     else if (arg === '--version' && args[i + 1]) options.version = args[++i];
+    else if (arg === '--filename' && args[i + 1]) options.filename = args[++i];
     else if (arg === '--notes' && args[i + 1]) options.notes = args[++i];
     else if (arg === '--token' && args[i + 1]) options.token = args[++i];
     else if (arg === '--repo' && args[i + 1]) options.repo = args[++i];
@@ -123,7 +125,7 @@ async function main() {
   const cleanVersion = opts.version.replace(/^[vV]\.?/, '').trim();
   const tagName = `v.${cleanVersion}`;
   const releaseTitle = `Ryno Music v.${cleanVersion}`;
-  const apkFilename = `Ryno Music v${cleanVersion}.apk`;
+  const apkFilename = opts.filename || `Ryno Music v.${cleanVersion}.apk`;
 
   console.log(`• Target Repository:    ${opts.repo}`);
   console.log(`• Release Version:      ${cleanVersion}`);

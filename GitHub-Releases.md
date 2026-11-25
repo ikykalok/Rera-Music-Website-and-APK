@@ -23,9 +23,9 @@ Always adhere strictly to these formats for all future releases:
 
 | Asset Type | Format | Example | Notes |
 | :--- | :--- | :--- | :--- |
-| **Git Tag** | `v.<version>` | `v.1.4.8` | **Must include the dot** immediately after `v` |
-| **Release Title** | `Ryno Music v.<version>` | `Ryno Music v.1.4.8` | Includes app name and version with dot |
-| **APK Asset Filename** | `Ryno Music v<version>.apk` | `Ryno Music v1.4.8.apk` | **No dot** after `v` in the filename |
+| **Git Tag** | `v.<version>` | `v.1.1.1` | **Must include the dot** immediately after `v` |
+| **Release Title** | `Ryno Music v.<version>` | `Ryno Music v.1.1.1` | Includes app name and version with dot |
+| **APK Asset Filename** | `Ryno Music v.<version>.apk` | `Ryno Music v.1.1.1.apk` | Exact format with spaces and dot after `v` (also backward-compatible with older releases) |
 
 ---
 
@@ -35,22 +35,24 @@ The Ryno Music website automatically detects the latest published stable release
 
 1. **Client Page Load**:
    - `public/js/site.js` runs on every page visit.
-   - Checks `localStorage` for cached release data (10-minute TTL). If valid, immediately assigns the latest APK download URL to all download buttons.
+   - If a cached release is present in `localStorage`, it is applied immediately so download buttons are active instantly.
 2. **Background Release Fetch**:
-   - The browser queries `/api/latest-release` (a serverless endpoint on Vercel with 5-minute edge revalidation cache to prevent GitHub rate-limiting).
-   - If offline or on static preview, it falls back directly to `https://api.github.com/repos/ikykalok/Rera-Music-Website-and-APK/releases/latest`.
-3. **Asset Identification**:
-   - Locates the official release asset ending with `.apk` (matching `Ryno Music v*.apk`).
-   - Retrieves its official `browser_download_url`.
+   - The browser queries `/api/latest-release` (a serverless endpoint on Vercel with 60-second edge revalidation cache).
+   - If offline or on static preview, it falls back directly to `https://api.github.com/repos/ikykalok/Rera-Music-Website-and-APK/releases?per_page=10`.
+3. **Asset Identification & Chronological Ordering**:
+   - Sorts releases chronologically by publication date (`published_at` descending) so new releases are detected even if their semantic version string does not sort higher.
+   - Filters out all draft and prerelease entries (only published stable releases).
+   - Finds the matching APK asset (supporting exact `Ryno Music v.X.Y.Z.apk`, variants, and `.apk` assets).
+   - Retrieves its official GitHub `browser_download_url`.
 4. **Targeted Button Update**:
-   - Automatically updates `href` attributes for:
+   - Automatically updates `href` attributes for all download buttons:
      - Header primary button: `.nav-cta`
      - Mobile menu link: `.menu-link[data-download-apk]`
      - Footer APK link: `a[data-download-apk]`
      - VirusTotal download button: `a[data-download-apk]`
+     - Custom event `ryno:release-updated` dispatched for reactive components.
 5. **Graceful Fallback**:
-   - If GitHub is temporarily unreachable or rate-limited, all buttons retain the verified fallback URL:
-     `https://github.com/ikykalok/Rera-Music-Website-and-APK/releases/latest`
+   - In-memory server fallback cache ensures that if GitHub rate limits or network issues occur, the last known valid release download link is served.
    - Users are never presented with a broken or empty link.
 
 ---
